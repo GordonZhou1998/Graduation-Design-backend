@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.zywlzl.mapper.CnMedInfoMapper">
+  <resultMap id="BaseResultMap" type="com.neusoft.zywlzl.model.CnMedInfo">
+    <!--@mbg.generated-->
+    <!--@Table cn_med_info-->
+    <id column="med_info_id" jdbcType="INTEGER" property="medInfoId" />
+    <result column="med_info_title" jdbcType="VARCHAR" property="medInfoTitle" />
+    <result column="med_info_detail" jdbcType="VARCHAR" property="medInfoDetail" />
+    <result column="med_info_comment_id" jdbcType="INTEGER" property="medInfoCommentId" />
+    <result column="med_info_comment_detail" jdbcType="VARCHAR" property="medInfoCommentDetail" />
+    <result column="med_info_category_id" jdbcType="INTEGER" property="medInfoCategoryId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    med_info_id, med_info_title, med_info_detail, med_info_comment_id, med_info_comment_detail, 
+    med_info_category_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from cn_med_info
+    where med_info_id = #{medInfoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from cn_med_info
+    where med_info_id = #{medInfoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.neusoft.zywlzl.model.CnMedInfo">
+    <!--@mbg.generated-->
+    insert into cn_med_info (med_info_id, med_info_title, med_info_detail, 
+      med_info_comment_id, med_info_comment_detail, 
+      med_info_category_id)
+    values (#{medInfoId,jdbcType=INTEGER}, #{medInfoTitle,jdbcType=VARCHAR}, #{medInfoDetail,jdbcType=VARCHAR}, 
+      #{medInfoCommentId,jdbcType=INTEGER}, #{medInfoCommentDetail,jdbcType=VARCHAR}, 
+      #{medInfoCategoryId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.neusoft.zywlzl.model.CnMedInfo">
+    <!--@mbg.generated-->
+    insert into cn_med_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="medInfoId != null">
+        med_info_id,
+      </if>
+      <if test="medInfoTitle != null">
+        med_info_title,
+      </if>
+      <if test="medInfoDetail != null">
+        med_info_detail,
+      </if>
+      <if test="medInfoCommentId != null">
+        med_info_comment_id,
+      </if>
+      <if test="medInfoCommentDetail != null">
+        med_info_comment_detail,
+      </if>
+      <if test="medInfoCategoryId != null">
+        med_info_category_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="medInfoId != null">
+        #{medInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="medInfoTitle != null">
+        #{medInfoTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="medInfoDetail != null">
+        #{medInfoDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="medInfoCommentId != null">
+        #{medInfoCommentId,jdbcType=INTEGER},
+      </if>
+      <if test="medInfoCommentDetail != null">
+        #{medInfoCommentDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="medInfoCategoryId != null">
+        #{medInfoCategoryId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.neusoft.zywlzl.model.CnMedInfo">
+    <!--@mbg.generated-->
+    update cn_med_info
+    <set>
+      <if test="medInfoTitle != null">
+        med_info_title = #{medInfoTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="medInfoDetail != null">
+        med_info_detail = #{medInfoDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="medInfoCommentId != null">
+        med_info_comment_id = #{medInfoCommentId,jdbcType=INTEGER},
+      </if>
+      <if test="medInfoCommentDetail != null">
+        med_info_comment_detail = #{medInfoCommentDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="medInfoCategoryId != null">
+        med_info_category_id = #{medInfoCategoryId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where med_info_id = #{medInfoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.neusoft.zywlzl.model.CnMedInfo">
+    <!--@mbg.generated-->
+    update cn_med_info
+    set med_info_title = #{medInfoTitle,jdbcType=VARCHAR},
+      med_info_detail = #{medInfoDetail,jdbcType=VARCHAR},
+      med_info_comment_id = #{medInfoCommentId,jdbcType=INTEGER},
+      med_info_comment_detail = #{medInfoCommentDetail,jdbcType=VARCHAR},
+      med_info_category_id = #{medInfoCategoryId,jdbcType=INTEGER}
+    where med_info_id = #{medInfoId,jdbcType=INTEGER}
+  </update>
+</mapper>
