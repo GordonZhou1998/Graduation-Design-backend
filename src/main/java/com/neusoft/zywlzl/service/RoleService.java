@@ -4,6 +4,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.neusoft.zywlzl.model.Role;
 import com.neusoft.zywlzl.mapper.RoleMapper;
+
+import java.util.List;
+
 @Service
 public class RoleService{
 
@@ -38,6 +41,10 @@ public class RoleService{
     
     public int updateByPrimaryKey(Role record) {
         return roleMapper.updateByPrimaryKey(record);
+    }
+
+    public List<Role> selectAll() {
+        return roleMapper.selectAll();
     }
 
 }
