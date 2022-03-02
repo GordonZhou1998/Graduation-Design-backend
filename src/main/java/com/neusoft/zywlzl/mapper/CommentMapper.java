@@ -3,6 +3,8 @@ package com.neusoft.zywlzl.mapper;
 import com.neusoft.zywlzl.model.Comment;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface CommentMapper {
     /**
@@ -46,4 +48,6 @@ public interface CommentMapper {
      * @return update count
      */
     int updateByPrimaryKey(Comment record);
+
+    List<Comment> selectAll();
 }

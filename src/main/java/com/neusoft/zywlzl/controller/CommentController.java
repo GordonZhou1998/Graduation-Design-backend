@@ -16,10 +16,10 @@ import java.util.List;
 @RequestMapping("/api")
 public class CommentController {
 
-    @PostMapping("/comment/searchall")
-    public List<Comment> searchBy() {
+    @PostMapping("/comment/searchbyid")
+    public Comment searchById(int id) {
         CommentService commentService = new CommentService();
-        return commentService.selectAll();
+        return commentService.selectByPrimaryKey(id);
     }
 
     @PostMapping("/comment/insert")

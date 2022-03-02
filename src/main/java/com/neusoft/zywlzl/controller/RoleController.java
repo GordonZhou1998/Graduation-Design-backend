@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/role")
+@RequestMapping("/api")
 public class RoleController {
 
-    @PostMapping("/allroles")
+    @PostMapping("/selectAllRole")
     public List<Role> getAllRoleList() {
         RoleService roleService = new RoleService();
         return roleService.selectAll();

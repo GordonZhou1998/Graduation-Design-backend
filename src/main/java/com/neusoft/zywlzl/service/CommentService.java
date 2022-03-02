@@ -43,6 +43,7 @@ public class CommentService{
         return commentMapper.updateByPrimaryKey(record);
     }
 
-    public List<Comment> selectAll() {
+    public List<Comment> selectAll() {  //查询所有评论
+        return commentMapper.selectAll();
     }
 }
