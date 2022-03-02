@@ -3,6 +3,8 @@ package com.neusoft.zywlzl.mapper;
 import com.neusoft.zywlzl.model.CnMedInfo;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface CnMedInfoMapper {
     /**
@@ -46,4 +48,12 @@ public interface CnMedInfoMapper {
      * @return update count
      */
     int updateByPrimaryKey(CnMedInfo record);
+
+    List<CnMedInfo> selectAll();
+
+    int selectCount();
+
+    List<CnMedInfo> selectByPage(int start, int rows);
+
+    List<CnMedInfo> selectByKeyword(String keyword);
 }

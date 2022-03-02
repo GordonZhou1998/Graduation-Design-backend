@@ -88,4 +88,19 @@
       hospital_phone = #{hospitalPhone,jdbcType=VARCHAR}
     where hospital_id = #{hospitalId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from hospital
+  </select>
+
+  <select id="selectByName" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from hospital
+    where hospital_name like '%${hospitalName}%'
+  </select>
 </mapper>

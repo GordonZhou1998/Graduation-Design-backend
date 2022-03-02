@@ -113,4 +113,34 @@
       med_info_category_id = #{medInfoCategoryId,jdbcType=INTEGER}
     where med_info_id = #{medInfoId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from cn_med_info
+    </select>
+
+  <select id="selectCount" resultType="int">
+    <!--@mbg.generated-->
+    select count(*) from cn_med_info
+  </select>
+
+  <select id="selectByPage" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from cn_med_info
+    <if test="page != null">
+      limit #{page.start}, #{page.pageSize}
+    </if>
+  </select>
+
+  <select id="selectByKeyword" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from cn_med_info
+    where med_info_title like '%${keyword}%'
+  </select>
 </mapper>

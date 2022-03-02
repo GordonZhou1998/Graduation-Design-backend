@@ -3,6 +3,8 @@ package com.neusoft.zywlzl.mapper;
 import com.neusoft.zywlzl.model.Hospital;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface HospitalMapper {
     /**
@@ -46,4 +48,8 @@ public interface HospitalMapper {
      * @return update count
      */
     int updateByPrimaryKey(Hospital record);
+
+    List<Hospital> selectAll();
+
+    List<Hospital> selectByName(String name);
 }

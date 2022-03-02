@@ -30,10 +30,10 @@
   </delete>
   <insert id="insert" parameterType="com.neusoft.zywlzl.model.User">
     <!--@mbg.generated-->
-    insert into "user" (user_id, user_name, "password", 
+    insert into "user" (user_name, "password",
       "role", phone_number, chinese_name, 
       age)
-    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{role,jdbcType=INTEGER}, #{phoneNumber,jdbcType=VARCHAR}, #{chineseName,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER})
   </insert>

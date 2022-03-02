@@ -4,6 +4,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.neusoft.zywlzl.model.Comment;
 import com.neusoft.zywlzl.mapper.CommentMapper;
+
+import java.util.List;
+
 @Service
 public class CommentService{
 
@@ -40,4 +43,6 @@ public class CommentService{
         return commentMapper.updateByPrimaryKey(record);
     }
 
+    public List<Comment> selectAll() {
+    }
 }

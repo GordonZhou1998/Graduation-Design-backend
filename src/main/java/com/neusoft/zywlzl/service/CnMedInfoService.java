@@ -4,6 +4,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.neusoft.zywlzl.model.CnMedInfo;
 import com.neusoft.zywlzl.mapper.CnMedInfoMapper;
+
+import java.util.List;
+
 @Service
 public class CnMedInfoService{
 
@@ -40,4 +43,11 @@ public class CnMedInfoService{
         return cnMedInfoMapper.updateByPrimaryKey(record);
     }
 
+    public List<CnMedInfo> selectAll() { return cnMedInfoMapper.selectAll(); }
+
+    public int selectCount() { return cnMedInfoMapper.selectCount(); }
+
+    public List<CnMedInfo> selectByPage(int start, int rows) { return cnMedInfoMapper.selectByPage(start, rows); }
+
+    public List<CnMedInfo> selectByKeyword(String keyword) { return cnMedInfoMapper.selectByKeyword(keyword); }
 }

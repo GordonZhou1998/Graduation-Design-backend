@@ -4,6 +4,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.neusoft.zywlzl.mapper.HospitalMapper;
 import com.neusoft.zywlzl.model.Hospital;
+
+import java.util.List;
+
 @Service
 public class HospitalService{
 
@@ -40,4 +43,9 @@ public class HospitalService{
         return hospitalMapper.updateByPrimaryKey(record);
     }
 
+    public List<Hospital> selectAll() { return hospitalMapper.selectAll(); }
+
+    public List<Hospital> selectByName(String name) {
+        return hospitalMapper.selectByName(name);
+    }
 }
